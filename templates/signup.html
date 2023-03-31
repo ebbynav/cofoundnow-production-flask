@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>/* General styles */
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      h1 {
+        font-size: x-large;
+        text-align: center;
+        color: #00ba44;
+        padding-bottom: 25px;
+      }
+      form {
+        margin: 30px auto;
+        max-width: 400px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.119);
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #00ba44;
+      }
+      
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: rgb(42, 39, 39);
+        color: #00ba44;
+      }
+      
+      input[type="submit"] {
+        display: block;
+        margin-top: 20px auto;
+        padding: 10px 20px;
+        background-color: #00ba44;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 25px;
+        position: relative;
+        left: 270px;
+        bottom: 25px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #097832;
+      }
+      a {
+        color: #00ba44;
+        text-decoration: underline;
+      }
+      a:last-child {
+        margin-left: 10px;
+      }
+      .error {
+        font-weight: bold;
+        align-self: center;
+        color: #00ba44;
+      }
+      body {
+        background: #000000; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to bottom,
+          #434343,
+          #000000
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to bottom,
+          #434343,
+          #000000
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      
+        font-family: Arial, sans-serif;
+        overflow-y: hiddens;
+        min-height: 96vh;
+      }
+      a:hover {
+        color: #095b27;
+      }
+      </style>
+</head>
+<body>
+    <form action="signup" method="post">
+      <h1>Signup</h1>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" id="first_name" />
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" id="last_name" />
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" />
+        <a href="{{ url_for('login') }}">Already have an account, Login</a>
+        <input type="submit" value="Signup" />
+        {{ error }}
+    </form>
+</html>

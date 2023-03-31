@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Post</title>
+    <style>
+      /* Set a default font family and size */
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        background: #000000; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to bottom,
+          #434343,
+          #000000
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #434343, #000000);
+        overflow-y: hiddens;
+        min-height: 637px;
+      }
+
+      /* Center the title and add some margin */
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #00ba44;
+      }
+
+      /* Add some margin and padding to the form */
+      form {
+        max-width: 500px;
+        min-height: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.119);
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Add some margin to the form inputs */
+
+      form label,
+      form input,
+      form textarea {
+        display: block;
+        margin: 10px 0;
+        color: #00ba44;
+      }
+      form label {
+        font-weight: bold;
+        font-size: large;
+      }
+      form input,
+      form textarea {
+        background-color: rgb(42, 39, 39);
+        color: white;
+      }
+
+      /* Style the submit button */
+      form input[type="submit"] {
+        background-color: #00ba44;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+        left: 375px;
+      }
+      input[type="submit"]:hover {
+        background-color: #097832;
+      }
+      /* Add some margin to the error message */
+      #error {
+        margin-top: 100px;
+      }
+
+      /* Style the user information */
+      .user-info {
+        font-style: italic;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/create-post" method="POST" enctype="multipart/form-data">
+      <h1>Create Post</h1>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="photo">Photos (max 3, each less than 1 MB):</label>
+      <input
+        type="file"
+        id="photo"
+        name="photo"
+        accept="image/jpeg,image/png"
+        multiple
+      />
+      <input type="submit" value="Create post" />
+      {{ user }} {{ fullname }} {{ error }}
+    </form>
+  </body>
+</html>
